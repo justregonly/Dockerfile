@@ -4,7 +4,8 @@ MAINTAINER Mysci
 RUN apt-get update
 
 RUN apt-get install -y openssh-server wget
-RUN mkdir /var/run/sshd
+RUN mkdir -p /var/run/sshd
+RUN mkdir -p /root/.ssh/
 
 RUN echo 'root:root' | chpasswd
 
