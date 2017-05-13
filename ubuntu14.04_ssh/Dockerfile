@@ -14,11 +14,6 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#AuthorizedKeysFile/AuthorizedKeysFile/g' /etc/ssh/sshd_config
 RUN wget --no-check-certificate -O /root/.ssh/authorized_keys https://github.com/yu19930123/Dockerfile/raw/master/authorized_keys 
 RUN chmod 700 /root/.ssh/authorized_keys 
-EXPOSE 22
-EXPOSE 80
-EXPOSE 443
-EXPOSE 8080
-EXPOSE 9080
-EXPOSE 9443
+EXPOSE 22 80 443 9001 9091 
 
 CMD    ["/usr/sbin/sshd", "-D"]
