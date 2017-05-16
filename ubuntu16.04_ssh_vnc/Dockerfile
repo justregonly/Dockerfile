@@ -13,7 +13,7 @@ RUN apt-get update && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 ENV DEBIAN_FRONTEND newt
 ADD xstartup /root/.vnc/xstartup
+RUN chmod 755 /root/.vnc/xstartup
 
 EXPOSE 22 80 443 9001 9091 
 CMD    ["/usr/sbin/sshd", "-D"]
-
